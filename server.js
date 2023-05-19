@@ -11,15 +11,14 @@ const app = express();
 
 const PORT = process.env.PORT || 4000;
 
-console.log("Server is running");
 app.use(cookieParser());
 
-app.use(
-  cors({
-    credentials: true,
-    origin: process.env.FRONT_END_URL,
-  })
-);
+// app.use(
+//   cors({
+//     credentials: true,
+//     origin: process.env.FRONT_END_URL,
+//   })
+// );
 
 app.use(express.json());
 
@@ -31,10 +30,6 @@ app.use((req, res, next) => {
 app.use("/user", userRoutes);
 
 app.use("/todo", todoRoutes);
-
-app.get("/", (req, res) => {
-  return res.status(200).json({ msg: "hello" });
-});
 
 if (process.env.NODE_ENV === "production") {
   app.get("/", (req, res) => {
