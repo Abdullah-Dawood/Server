@@ -26,7 +26,7 @@
           "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
         },
         {
-          "source": "/client-psi-opal-69.vercel.app/(.*)",
+          "source": "/https://client-psi-opal-69.vercel.app/(.*)",
           "headers": [{ "key": "Access-Control-Allow-Origin", "value": "*" }]
         }
       ]
