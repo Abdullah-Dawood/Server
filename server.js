@@ -30,12 +30,12 @@ app.use("/user", userRoutes);
 
 app.use("/todo", todoRoutes);
 
-if (process.env.NODE_ENV === "production") {
-  app.get("/", (req, res) => {
-    app.use(express.static(path.resolve(__dirname, "client", "dist")));
-    res.sendFile(path.resolve(__dirname, "client", "dist", "index.html"));
-  });
-}
+// if (process.env.NODE_ENV === "production") {
+//   app.get("/", (req, res) => {
+//     app.use(express.static(path.resolve(__dirname, "client", "dist")));
+//     res.sendFile(path.resolve(__dirname, "client", "dist", "index.html"));
+//   });
+// }
 
 mongoose
   .connect(process.env.MONGOURI)
